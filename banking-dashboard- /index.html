@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Dashboard Card</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Main Dashboard Container */
+        .dashboard-card {
+            background: #f8fafc;
+            width: 100%;
+            max-width: 410px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding-bottom: 20px;
+        }
+
+        /* Top Blue Balance Card */
+        .balance-card {
+            background: linear-gradient(180deg, #0f3d69 0%, #0b2a4a 100%);
+            color: #ffffff;
+            padding: 30px 20px 24px 20px;
+            text-align: center;
+        }
+
+        .balance-header {
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.85;
+            text-decoration: underline;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+
+        .balance-amount {
+            font-size: 34px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .balance-footer {
+            font-size: 13px;
+            opacity: 0.9;
+            cursor: pointer;
+        }
+
+        /* 3-Column Quick Actions Grid */
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            padding: 16px 20px;
+            background: #ffffff;
+        }
+
+        .action-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .action-icon-circle {
+            width: 48px;
+            height: 48px;
+            background-color: #e2e8f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #334155;
+            transition: background 0.2s;
+        }
+
+        .action-item:hover .action-icon-circle {
+            background-color: #cbd5e1;
+        }
+
+        .action-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: #334155;
+        }
+
+        /* Section Cards (Transactions / Spending) */
+        .content-section {
+            background: #ffffff;
+            margin: 0 12px;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: 700;
+            color: #1e293b;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .search-btn {
+            background: #f1f5f9;
+            border: none;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #0f3d69;
+            cursor: pointer;
+        }
+
+        /* Transaction Item Row */
+        .transaction-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 4px;
+        }
+
+        .transaction-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .transaction-icon {
+            width: 32px;
+            height: 32px;
+            background: #f1f5f9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .transaction-info .main-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .transaction-right {
+            text-align: right;
+        }
+
+        .amount-positive {
+            font-size: 14px;
+            font-weight: 600;
+            color: #15803d;
+        }
+
+        .running-balance {
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+
+        /* Simple Link Footer inside Cards */
+        .section-footer-link {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #0f3d69;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-card">
+    <div class="balance-card">
+        <div class="balance-header">Available Balance</div>
+        <div class="balance-amount">$75,001.00</div>
+        <div class="balance-footer">View Balance Details</div>
+    </div>
+
+    <div class="actions-grid">
+        <div class="action-item">
+            <div class="action-icon-circle">🏦</div>
+            <span class="action-label">My Account</span>
+        </div>
+        <div class="action-item">
+            <div class="action-icon-circle">💳</div>
+            <span class="action-label">My Card</span>
+        </div>
+        <div class="action-item">
+            <div class="action-icon-circle">💸</div>
+            <span class="action-label">Move Money</span>
+        </div>
+        <div class="action-item">
+            <div class="action-icon-circle">🔄</div>
+            <span class="action-label">Transfer</span>
+        </div>
+        <div class="action-item">
+            <div class="action-icon-circle">💵</div>
+            <span class="action-label">Pay Bills</span>
+        </div>
+        <div class="action-item">
+            <div class="action-icon-circle">📸</div>
+            <span class="action-label">Deposit</span>
+        </div>
+    </div>
+
+    <div class="content-section" style="padding: 12px 16px; font-weight: 600; font-size: 12px; color: #0f3d69; letter-spacing: 0.3px;">
+        📋 VIEW SCHEDULED TRANSACTIONS
+    </div>
+
+    <div class="content-section">
+        <div class="section-header">
+            <span>📊 Transaction Activity</span>
+            <button class="search-btn">Search</button>
+        </div>
+        
+        <div class="transaction-row">
+            <div class="transaction-left">
+                <div class="transaction-icon">❓</div>
+                <div class="transaction-info">
+                    <div class="main-text">DEPOSIT@MOBILE</div>
+                </div>
+            </div>
+            <div class="transaction-right">
+                <div class="amount-positive">+$75,000.00</div>
+                <div class="running-balance">$75,001.00</div>
+            </div>
+        </div>
+
+        <a href="#" class="section-footer-link">View All Transactions</a>
+    </div>
+</div>
+
+</body>
+</html>
+
