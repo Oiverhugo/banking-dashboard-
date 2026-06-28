@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulated Banking Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f8;
+            font-family: 'Roboto', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Header Section */
+        .header-container {
+            background: linear-gradient(to bottom, #0c335c, #16487a); /* USAA blue gradient */
+            color: #ffffff;
+            text-align: center;
+            padding: 16px 16px 28px 16px;
+            position: relative;
+        }
+
+        /* Back Arrow styling */
+        .back-button {
+            position: absolute;
+            left: 16px;
+            top: 14px;
+            font-size: 24px;
+            font-weight: 300;
+            cursor: pointer;
+        }
+
+        .account-type {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            margin-bottom: 24px;
+            margin-top: 2px;
+        }
+
+        .balance-label {
+            font-size: 14px;
+            text-decoration: underline;
+            color: #d1dcfa;
+            font-weight: 400;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+
+        .balance-amount {
+            font-size: 36px;
+            font-weight: 300; /* Crisp, thin font weight */
+            margin: 0 0 14px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .view-details {
+            font-size: 14px;
+            color: #ffffff;
+            text-decoration: underline;
+            opacity: 0.9;
+        }
+
+        /* Quick Actions Grid Container */
+        .actions-grid {
+            background-color: #ffffff;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px 10px;
+            padding: 24px 12px;
+            text-align: center;
+        }
+
+        .action-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* Icon Circle Layout */
+        .icon-circle {
+            width: 48px;
+            height: 48px;
+            background-color: #e9ecef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        /* Inline SVG icons for exact rendering without external assets */
+        .icon-circle svg {
+            width: 22px;
+            height: 22px;
+            fill: #495057;
+        }
+
+        .action-label {
+            font-size: 12px;
+            color: #333333;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <div class="back-button">&#12296;</div>
+        <div class="account-type">USAA CLASSIC CHECKING</div>
+        <div class="balance-label">Available Balance</div>
+        <div class="balance-amount">$6,000,000.00</div>
+        <div class="view-details">View Balance Details</div>
+    </div>
+
+    <div class="actions-grid">
+        <div class="action-item">
+            <div class="icon-circle">
+                <svg viewBox="0 0 24 24"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zm-6-7L2 7v2h19V7L10 3z"/></svg>
+            </div>
+            <div class="action-label">My Account</div>
+        </div>
+        <div class="action-item">
+            <div class="icon-circle">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+            </div>
+            <div class="action-label">My Card</div>
+        </div>
+        <div class="action-item">
+            <div class="icon-circle">
+                <svg viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5 0.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+            </div>
+            <div class="action-label">Move Money</div>
+        </div>
+        <div class="action-item">
+            <div class="icon-circle">
+                <svg viewBox="0 0 24 24"><path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z"/></svg>
+            </div>
+            <div class="action-label">Transfer</div>
+        </div>
+        <div class="action-item">
+            <div class="icon-circle">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11.5h-3
